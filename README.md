@@ -39,7 +39,37 @@ também. Seguindo a seguinte estrutura:
 Configurar o .env  
 Configurar o disparador de e-mails no .env  
 Configurar o jWT secret  
-Configurar o queue:work no servidor  
+Configurar o queue:work no servidor
+***
+## Rodando o projeto
+Primeiro é necessário gerar a key generate (chave de criptografia) do projeto:
+php artisan key:generate
+
+A base está versionada usando o sistema de migrations do laravel
+1 - Cria uma base dados e configure os valores no .env
+- DB_CONNECTION=
+- DB_HOST=
+- DB_PORT=
+- DB_DATABASE=
+- DB_USERNAME=
+- DB_PASSWORD=
+
+2 - Rode as migrations:
+php artisan migrate
+
+***
+## Dados simulados (Mocks)
+O projeto já tem uma coleção de dados simulados para teste de 
+integração com aplicativos como o Insomina/Postman
+
+Para carregar os Seeders utilize o comando:
+php artisan db:seed
+
+***
+## Rodando os teste automatizados
+O projeto já possui uma suíte de testes automatizados
+Utilize o comnado:
+vendor\bin\phpunit
 
 ***
 ## Código de conduta
